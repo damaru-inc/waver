@@ -14,14 +14,12 @@ Arturia's [Pigments](https://www.arturia.com/products/software-instruments/pigme
 
 ## Building and Running
 
-`mvn javafx:run`
+Run `mvn javafx:run`
 
-Use the sliders to modify the wavetable. When you're satisfied, click the Save button and save the file.
-
-You can then go into Pigments, set the Engine type to Wavetable, and select a wavetable.
-
-In the wavetable chooser, click Add Folder and navigate to the folder in which you stored your wavetable.
-Then you can pick the file and load it.
+1. Use the sliders to modify the wavetable. When you're satisfied, click the Save button and save the file.
+2. Go into Pigments, set the Engine type to Wavetable, and click the wavetable name to bring up the wavetable chooser.
+3. In the wavetable chooser, click Add Folder and navigate to the folder in which you stored your wavetable.
+4. Find your file and load it.
 
 ## Description
 
@@ -37,6 +35,8 @@ This works best if each waveform is similar to its neighbors.
 One way to achieve that is by using a technique called [Simplex Noise](https://en.wikipedia.org/wiki/Simplex_noise).
 Using that, we can ensure that each waveform itself is somewhat smooth, 
 and that there is a smooth transition from each waveform to its neighbor.
+
+N.B. I copied [KdotJPS](https://github.com/KdotJPG/OpenSimplex2)'s implementation, I'm grateful to them for sharing that!
 
 We can think of a wavetable as a 2-dimensional grid. One dimension has a waveform in each row, 
 and the other dimension is the set of values that make up one waveform.
@@ -58,13 +58,13 @@ So that's how this works. For each waveform, we traverse a circle through the no
 For each subsequent waveform, we change things a little bit to get a different waveform.
 There are a few controls that you can use to affect this:
 
-* Seed - The Simplex noise function takes a seed parameter, which you can set. Different values affect the waveforms overall.
+* Seed - The Simplex noise function takes a seed parameter, which you can set. Different values produce different noise landscapes, if you will.
 * Radius Base - This is the radius of the circle that we traverse for the first waveform. 
 The larger the radius, the more different noise values will appear in the waveform. 
 In other words, the larger the radius, the more complex will be the waveform.
 * Radius Increment - this is the amount by which the radius will grow for each waveform.
 This allows you to create wavetables where the waves transition from simple to complex.
-* X Offset - this is the amount by which the centre of the circle shifts for each waveform.
+* X Increment - this is the amount by which the centre of the circle shifts for each waveform.
 If you increase this value, and set the Radius Increment value to 0, then the waves will all be different
 but they will have similar complexity.
 

@@ -10,8 +10,8 @@ import java.io.IOException;
 
 public class MainApplication extends Application {
 
-    public static final int SCREEN_WIDTH = 2000;
-    public static final int SCREEN_HEIGHT = 1000;
+    public static final int SCREEN_WIDTH = 1600;
+    public static final int SCREEN_HEIGHT = 800;
 
     @Override
     public void start(Stage stage) throws IOException {
