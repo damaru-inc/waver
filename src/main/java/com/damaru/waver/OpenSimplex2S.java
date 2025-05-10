@@ -1,7 +1,9 @@
-package com.damaru.wavetools;
+package com.damaru.waver;
 
 /**
  * K.jpg's OpenSimplex 2, smooth variant ("SuperSimplex")
+ *
+ * Copied from https://github.com/KdotJPG/OpenSimplex2
  */
 
 public class OpenSimplex2S {
