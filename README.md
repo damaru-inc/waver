@@ -21,6 +21,12 @@ Run `mvn javafx:run`
 3. In the wavetable chooser, click Add Folder and navigate to the folder in which you stored your wavetable.
 4. Find your file and load it.
 
+## Disclaimer
+
+I acknowledge that the UI is cluncky. 
+I'm more interested in getting the audio files than I am in creating a great user experience.
+If anyone cares enough about this I'll gladly accept code contributions!
+
 ## Description
 
 A wavetable is a set of audio snippets which are packaged together and intended to be used as a group.
